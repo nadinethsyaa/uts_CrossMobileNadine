@@ -1,0 +1,7 @@
+{
+  "name": "uts_nadine",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
