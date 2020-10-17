@@ -1,0 +1,117 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button id="mainMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title slot="start">Admin</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="addModal()">
+        <ion-icon name="add" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-margin">
+    <ion-item-sliding *ngFor="let CPU of cpus; let i=index" class="ion-margin-bottom" #slidingCPU>
+      <ion-item color="tertiary">
+        <ion-thumbnail slot="start">
+          <img [src]="CPU.foto">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text>
+            <h3 style="font-weight:bold">{{ CPU.merek }} {{ CPU.model }}</h3>
+            <p>Rp. {{ CPU.harga }}</p>
+            <p>Stock: {{ CPU.stok }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="deleteC(CPU, slidingCPU)" color="danger">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="editC(CPU, slidingCPU)" color="secondary">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let GPU of gpus" class="ion-margin-bottom" #slidingGPU>
+      <ion-item color="tertiary">
+        <ion-thumbnail slot="start">
+          <img [src]="GPU.foto">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text>
+            <h3 style="font-weight:bold">{{ GPU.merek }} {{ GPU.model }}</h3>
+            <p>{{ GPU.harga }}</p>
+            <p>Tersedia: {{ GPU.stok }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="deleteG(GPU, slidingGPU)" color="danger">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="editG(GPU, slidingGPU)" color="secondary">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let motherboard of mboards" class="ion-margin-bottom" #slidingMotherboard>
+      <ion-item  color="tertiary" >
+        <ion-thumbnail slot="start">
+          <img [src]="motherboard.foto">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text>
+            <h3 style="font-weight:bold">{{ motherboard.merek }} {{ motherboard.model }}</h3>
+            <p>{{ motherboard.harga }}</p>
+            <p>Tersedia: {{ motherboard.stok }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="deleteM(motherboard, slidingMotherboard)" color="danger">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="editM(motherboard, slidingMotherboard)" color="secondary">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <ion-item-sliding *ngFor="let RAM of rams" class="ion-margin-bottom" #slidingRAM>
+      <ion-item color="tertiary" >
+        <ion-thumbnail slot="start">
+          <img [src]="RAM.foto">
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text>
+            <h3 style="font-weight:bold">{{ RAM.merek }} {{ RAM.model }}</h3>
+            <p>{{ RAM.harga }}</p>
+            <p>Tersedia: {{ RAM.stok }}</p>
+          </ion-text>
+        </ion-label>
+      </ion-item>
+      <ion-item-options side="start">
+        <ion-item-option (click)="deleteR(RAM, slidingRAM)" color="danger">
+          <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="editR(RAM, slidingRAM)" color="secondary">
+          <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

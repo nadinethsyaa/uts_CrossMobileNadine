@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">Edit Motherboard</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="saveAlert()">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item class="ion-hide">
+        <ion-label position="stacked">ID</ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="motherboardDetail.id" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">merek</ion-label>
+        <ion-input type="text" formControlName="merek" [(ngModel)]="motherboardDetail.merek" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Model</ion-label>
+        <ion-input type="text" formControlName="model" [(ngModel)]="motherboardDetail.model" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Image Url</ion-label>
+        <ion-textarea type="text" formControlName="foto" [(ngModel)]="motherboardDetail.foto"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Chipset</ion-label>
+        <ion-input type="text" formControlName="chipset" [(ngModel)]="motherboardDetail.chipset"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Slot for merek</ion-label>
+        <ion-input type="text" formControlName="untuk_merek" [(ngModel)]="motherboardDetail.untuk_merek"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">harga</ion-label>
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row>
+            <ion-col size="3">
+              <ion-input type="text" placeholder="Rp. " readonly></ion-input>
+            </ion-col>
+            <ion-col size="9">
+              <ion-input type="text" formControlName="harga" [(ngModel)]="motherboardDetail.harga"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">stok</ion-label>
+        <ion-input type="number" formControlName="stok" [(ngModel)]="motherboardDetail.stok"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="saveAlert()" color="primary" expand="full">Save</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">Edit RAM</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="saveAlert()">
+        <ion-icon name="checkmark" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item class="ion-hide">
+        <ion-label position="stacked">ID</ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="ramDetail.id" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">merek</ion-label>
+        <ion-input type="text" formControlName="merek" [(ngModel)]="ramDetail.merek" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Model</ion-label>
+        <ion-input type="text" formControlName="model" [(ngModel)]="ramDetail.model" disabled></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Image Url</ion-label>
+        <ion-textarea type="text" formControlName="foto" [(ngModel)]="ramDetail.foto"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Speed</ion-label>
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row>
+            <ion-col ukuran="9">
+              <ion-input type="text" formControlName="speed" [(ngModel)]="ramDetail.speed"></ion-input>
+            </ion-col>
+            <ion-col ukuran="3">
+              <ion-input type="text" placeholder="MHz" readonly></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">ukuran</ion-label>
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row>
+            <ion-col ukuran="9">
+              <ion-input type="text" formControlName="ukuran" [(ngModel)]="ramDetail.ukuran"></ion-input>
+            </ion-col>
+            <ion-col ukuran="3">
+              <ion-input type="text" placeholder="GB" readonly></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">harga</ion-label>
+        <ion-grid class="ion-no-margin ion-no-padding">
+          <ion-row>
+            <ion-col ukuran="3">
+              <ion-input type="text" placeholder="Rp. " readonly></ion-input>
+            </ion-col>
+            <ion-col ukuran="9">
+              <ion-input type="text" formControlName="harga" [(ngModel)]="ramDetail.harga"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">stok</ion-label>
+        <ion-input type="number" formControlName="stok" [(ngModel)]="ramDetail.stok"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="saveAlert()" color="primary" expand="full">Save</ion-button>
+  </form>
+</ion-content>
