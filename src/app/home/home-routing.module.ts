@@ -6,6 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },
+  {
+    path: 'cpu/:id',
+    loadChildren: () => import('./cpu/cpu.module').then( m => m.CpuPageModule)
+  },
+  {
+    path: 'gpu/:id',
+    loadChildren: () => import('./gpu/gpu.module').then( m => m.GpuPageModule)
+  },
+  {
+    path: 'motherboard/:id',
+    loadChildren: () => import('./mboard/mboard.module').then( m => m.MboardPageModule)
+  },
+  {
+    path: 'ram/:id',
+    loadChildren: () => import('./ram/ram.module').then( m => m.RamPageModule)
   }
 ];
 
