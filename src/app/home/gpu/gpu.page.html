@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title slot="start">Detail GPU</ion-title>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <img [src]="gpu.foto">
+    <ion-card-header>
+      <ion-card-subtitle color="secondary">{{gpu.merek}}</ion-card-subtitle>
+      <ion-card-title color="light">{{gpu.model}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text color="light" class="ion-margin-bottom">
+        <h3>Price: Rp. {{gpu.harga}}</h3>
+        <h3>Stock: {{gpu.stok}}</h3>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

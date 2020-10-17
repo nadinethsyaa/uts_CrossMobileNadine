@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">{{cpu.merek}} {{cpu.model}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-card>
+    <img [src]="cpu.foto">
+    <ion-card-header>
+      <ion-card-subtitle color="secondary">{{cpu.merek}}</ion-card-subtitle>
+      <ion-card-title color="light">{{cpu.model}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text color="light" class="ion-margin-bottom">
+        <h3>Price: Rp. {{cpu.harga}}</h3>
+        <h3>Stock: {{cpu.stok}}</h3>
+      </ion-text>
+
+      <ion-card-subtitle class="ion-margin-top" color="light" style="font-weight:bold">DESCRIPTION</ion-card-subtitle>
+      <ion-text color="light">
+        <p>Base Clock: {{cpu.base_clock}} GHz</p>
+        <p>Boost Clock: {{cpu.boost_clock}} GHz</p>
+        <p>Number of Cores: {{cpu.jumlah_core}}</p>
+        <p>Number of Threads: {{cpu.thread}}</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
